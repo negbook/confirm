@@ -1,3 +1,8 @@
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/kZYTmraMWGM/hqdefault.jpg)](https://www.youtube.com/watch?v=kZYTmraMWGM)
+[Preview](https://www.youtube.com/watch?v=kZYTmraMWGM)  
+
+Inspired by [Use DisplayOnscreenKeyboard properly](https://forum.cfx.re/t/use-displayonscreenkeyboard-properly/51143)
+
 # fxserver-Confirm
 Confirm script for FXServer  
 

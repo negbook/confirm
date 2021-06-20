@@ -13,7 +13,7 @@ Confirm.Create = function(Title,Button1,Button2,cb)
         error('Error to creating mutiple Confirms')
         return 
     end 
-        TriggerEvent('CallScaleformMovie',"nbk_confirm",function(run,send,stop,handle)
+        Scaleforms.CallScaleformMovie("nbk_confirm",function(run,send,stop,handle)
             run('DISPLAY_CONFIRM')
             send(Title,Button1,Button2)
             stop()
@@ -34,7 +34,7 @@ Confirm.Create = function(Title,Button1,Button2,cb)
                         else 
                             TriggerEvent('EndScaleformMovie','nbk_confirm')
                             handle = nil 
-                            Threads.KillLoop('CreateConfirm',0);
+                            Threads.KillActionOfLoop('CreateConfirm',0);
                             cb (-1)
                             ConfirmBusy = false 
                         end 
@@ -46,10 +46,10 @@ Confirm.Create = function(Title,Button1,Button2,cb)
                         run(bankForm, "SET_INPUT_SELECT")
                         stop()
                         
-                        TriggerEvent('RequestScaleformCallbackInt',"nbk_confirm",'GET_CURRENT_SELECTION',function(data)
-                            TriggerEvent('EndScaleformMovie','nbk_confirm')
+                        Scaleforms.RequestScaleformCallbackInt("nbk_confirm",'GET_CURRENT_SELECTION',function(data)
+                            Scaleforms.EndScaleformMovie('nbk_confirm')
                             handle = nil 
-                            Threads.KillLoop('ComfrimInput',0);
+                            Threads.KillActionOfLoop('ComfrimInput',0);
                             cb(data)
                             ConfirmBusy = false 
                         end)
@@ -103,7 +103,7 @@ Confirm.Create = function(Title,Button1,Button2,cb)
                     end
                 end 
             end )
-            TriggerEvent('DrawScaleformMovie','nbk_confirm')
+            Scaleforms.DrawScaleformMovie('nbk_confirm')
             
         end)
         
